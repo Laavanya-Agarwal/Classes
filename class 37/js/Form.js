@@ -1,0 +1,41 @@
+class Form {
+  constructor() {
+    this.input = createInput("Name");
+    this.button = createButton('Play')
+    this.greeting = createElement('h3');;
+  }
+
+  display(){
+    var title = createElement('h2')
+    title.html("Car Racing Game");
+    title.position(130, 0);
+  
+    this.input.position(130, 160);
+    this.button.position(250, 200);
+
+    //=> means function
+    //calling a function which doesn't have any name
+    //if i write function, then the things under it won't show 
+    //because this.button is from the same class, but if I wrote a function after that and immidiately call it after, then it starts looking for the button
+    this.button.mousePressed(()=>{
+      this.input.hide();
+      this.button.hide();
+
+      //player
+      player.name = this.input.value();
+      playerCount+=1;
+      player.index = playerCount
+      player.update()
+      player.updateCount(playerCount);
+
+      this.greeting.html("Hello " + player.name )
+      this.greeting.position(130, 160)
+    });
+  }
+
+  hide(){
+    this.input.hide();
+    this.button.hide();
+    this.greeting.hide();
+  }
+}
